@@ -40,7 +40,7 @@ class PortfolioProjectAdmin(MarkdownxModelAdmin):
             'fields': ('live_url', 'github_url', 'case_study_url')
         }),
         ('Project Details', {
-            'fields': ('client_name', 'duration', 'team_size')
+            'fields': ('client_name', 'duration', 'duration_weeks', 'team_size')
         }),
         ('Metrics', {
             'fields': ('user_count', 'performance_metric', 'business_impact')

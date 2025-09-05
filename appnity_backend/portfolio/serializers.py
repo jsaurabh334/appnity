@@ -42,6 +42,7 @@ class PortfolioProjectListSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'title', 'slug', 'subtitle', 'category', 'status',
             'featured_image', 'client_name', 'duration', 'team_size',
+            'duration_weeks',
             'user_count', 'performance_metric', 'business_impact',
             'is_featured', 'technologies_count', 'challenges_count',
             'results_count', 'created_at', 'updated_at'
@@ -72,7 +73,7 @@ class PortfolioProjectDetailSerializer(serializers.ModelSerializer):
             'id', 'title', 'slug', 'subtitle', 'description', 'description_html',
             'category', 'status', 'featured_image', 'gallery_images',
             'live_url', 'github_url', 'case_study_url', 'client_name',
-            'duration', 'team_size', 'user_count', 'performance_metric',
+            'duration', 'duration_weeks', 'team_size', 'user_count', 'performance_metric',
             'business_impact', 'is_featured', 'technologies', 'challenges',
             'results', 'created_at', 'updated_at'
         ]
@@ -88,6 +89,7 @@ class PortfolioProjectCreateUpdateSerializer(serializers.ModelSerializer):
             'title', 'subtitle', 'description', 'category', 'status',
             'featured_image', 'gallery_images', 'live_url', 'github_url',
             'case_study_url', 'client_name', 'duration', 'team_size',
+            'duration_weeks',
             'user_count', 'performance_metric', 'business_impact',
             'is_featured', 'order'
         ]

@@ -42,6 +42,7 @@ class PortfolioProject(models.Model):
     # Project details
     client_name = models.CharField(max_length=100, blank=True)
     duration = models.CharField(max_length=50, help_text='e.g., "3 months", "6 weeks"')
+    duration_weeks = models.PositiveIntegerField(null=True, blank=True, help_text='Duration in weeks for filtering')
     team_size = models.PositiveIntegerField(default=1)
     
     # Metrics
