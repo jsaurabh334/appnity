@@ -34,6 +34,8 @@ class PortfolioProjectListSerializer(serializers.ModelSerializer):
     Serializer for portfolio project list view
     """
     technologies_count = serializers.SerializerMethodField()
+    challenges_count = serializers.SerializerMethodField()
+    results_count = serializers.SerializerMethodField()
 
     class Meta:
         model = PortfolioProject
@@ -41,11 +43,18 @@ class PortfolioProjectListSerializer(serializers.ModelSerializer):
             'id', 'title', 'slug', 'subtitle', 'category', 'status',
             'featured_image', 'client_name', 'duration', 'team_size',
             'user_count', 'performance_metric', 'business_impact',
-            'is_featured', 'technologies_count', 'created_at', 'updated_at'
+            'is_featured', 'technologies_count', 'challenges_count',
+            'results_count', 'created_at', 'updated_at'
         ]
 
     def get_technologies_count(self, obj):
         return obj.technologies.count()
+
+    def get_challenges_count(self, obj):
+        return obj.challenges.count()
+
+    def get_results_count(self, obj):
+        return obj.results.count()
 
 
 class PortfolioProjectDetailSerializer(serializers.ModelSerializer):
